@@ -1,0 +1,53 @@
+= Homework Automation Assignment - Rishabh Sharma (rishabh.p.sharma@accenture.com)
+
+** Wait for the envs to be up..
+
+=== Playbook for homework Assigment ======
+
+* Run `site-homework-assignment.yml` for homework assignment task
+
+** Playbook will do the following tasks
+
+.  Prepare `workstation-{{osp_GUID}}}.rhpds.opentlc.com`
+.. Setup ssh keys for cloud-user
+.. Install shade library
+.. Create `clouds.yaml` file for connecting to api of OSP
+. Install Ansible Tower on 3 nodes
+. Install Ansible Tower Isolated node on `workstation-{{osp_GUID}}}.rhpds.opentlc.com`
+. Connfigure tower:
+.. Install `tower-cli`
+.. Create Project
+.. Create required credentials
+.. Create job templates
+.. Create workflow template
+
+[source,text]
+----
+export TOWER_GUID=<Tower guid from mail>
+export OSP_GUID=<OSP GUID from mail>
+export SSO_LOGIN=<username-company.com>
+export SSO_KEY=~/.ssh/key.pem
+export WORKDIR=/Users/<username>/homework-assignment-automation/
+export SSO_PASSWORD=<your openlc account password>
+export JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
+
+###### Create local inventory
+
+###### mkdir ${WORKDIR}/inventory
+
+#### cat << EOF > ${WORKDIR}/inventory/inventory_local
+[bastion_tower]
+bastion.${TOWER_GUID}.example.opentlc.com 
+
+[workstation]
+workstation-${OSP_GUID}.rhpds.opentlc.com
+
+[all:vars]
+ansible_user=${SSO_LOGIN}
+ansible_ssh_private_key_file=${SSO_KEY} 
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+EOF
+
+##### ansible-playbook  site-homework.yml -e tower_GUID=${TOWER_GUID} -e osp_GUID=${OSP_GUID} -e sso_login=${SSO_LOGIN} -e path_to_sso_key=${SSO_KEY} -e workdir=${WORKDIR} -e param_repo_base=${JQ_REPO_BASE} -e sso_password=${SSO_PASSWORD} --ask-vault-pass
+---- 
