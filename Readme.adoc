@@ -8,7 +8,7 @@
 
 * Run `site-homework-assignment.yml` for homework assignment task
 
-** Playbook will do the following tasks
+** Playbook will do the following tasks: 
 
 .  Prepare `workstation-{{osp_GUID}}}.rhpds.opentlc.com`
 .. Setup ssh keys for cloud-user
@@ -33,9 +33,9 @@ export WORKDIR=/Users/<username>/homework-assignment-automation/
 export SSO_PASSWORD=<your openlc account password>
 export JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
 
-###### Create local inventory
+###### Create local inventory #####
 
-###### mkdir ${WORKDIR}/inventory
+###### mkdir ${WORKDIR}/inventory ######
 
 #### cat << EOF > ${WORKDIR}/inventory/inventory_local
 [bastion_tower]
