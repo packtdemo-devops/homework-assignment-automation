@@ -1,5 +1,5 @@
 ---
-# tasks file for osp-facts
+# tasks file for openstack-facts
    - name: Fetch Instance Info
      os_server_facts:
       cloud: ospcloud
