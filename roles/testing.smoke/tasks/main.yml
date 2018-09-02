@@ -6,7 +6,7 @@
     server: 'frontend'
   register: openstack_info
   tags:
-    - osp.smoke
+    - openstack.smoke
 
 - name: Curl website
   uri:
@@ -16,7 +16,7 @@
     - "{{ openstack_info.ansible_facts.openstack_servers }}"
   register: webpage  
   tags:
-    - osp.smoke
+    - openstack.smoke
 
 - name: Fail if Status Code is not 200
   fail:
@@ -24,7 +24,7 @@
   with_items: 
   - "{{ webpage.results }}"
   tags:
-  - osp.smoke
+  - openstack.smoke
 
 
 - name: sleep for 600 seconds and continue with play
