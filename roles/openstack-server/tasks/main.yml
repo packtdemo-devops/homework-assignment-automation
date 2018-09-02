@@ -1,6 +1,6 @@
 ---
 
-# tasks file for osp.servers
+# tasks file for openstack-server
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
     cloud: ospcloud
