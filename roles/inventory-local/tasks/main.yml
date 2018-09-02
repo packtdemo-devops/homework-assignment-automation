@@ -7,10 +7,10 @@
 
 - name: Remove files if exists
   file: 
-    path: "{{workdir}}/inventory/inventory_local"
+    path: "{{workdir}}/inventory/inventory-local"
     state: absent
 
 - name: Create local inventory file
   template:
     src: inventory_local.j2
-    dest: "{{workdir}}/inventory/inventory_local"
+    dest: "{{workdir}}/inventory/inventory-local"
