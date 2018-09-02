@@ -1,5 +1,5 @@
 ---
-# Initial, common, system setup steps
+# Initial, common, system seting up tasks
 
 - name: enable sudo without tty for some ansible commands
   replace:
@@ -10,13 +10,10 @@
 
 - name: enable repos
   template:
-    src: repos_template.j2
+    src: repo-template.j2
     dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: 0644
 
-#- name: setup hostname
-#  hostname:
-#    name: "{{ inventory_hostname }}"
  
 - name: install base tools and packages
   yum:
