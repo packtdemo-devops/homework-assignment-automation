@@ -1,5 +1,5 @@
 ---
-# vars file for roles/osp-lab
+# vars file for roles/openstack-setup
 
 osp_networks:
   # Public Facing Network   
