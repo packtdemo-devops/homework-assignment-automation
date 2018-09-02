@@ -10,7 +10,7 @@ ssh_cred_name: "Connect_to_workstation"
 user_cred_name: "cloud-user"
 user_cred_path: "/root/.ssh/openstack.pem"
 static_inventory_name: scm_inventory
-job_template_name_osp_infra: osp_infra
+job_template_name_osp_infra: openstack_infra
 instance_group_name: osp
 osp_infra_playbook: ansible-openstack-infra.yml
 workflow_template_name: cicd_workflow
