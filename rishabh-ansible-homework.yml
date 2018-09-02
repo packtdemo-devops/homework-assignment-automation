@@ -10,6 +10,6 @@
   gather_facts: false 
   become: yes 
   roles:
-    - install-tower
-    - config-tower
+    - tower-install
+    - tower-configuration
 
