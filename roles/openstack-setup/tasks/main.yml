@@ -1,5 +1,5 @@
 ---
-# tasks file for roles/openstack-setuo
+# tasks file for roles/openstack-setup
 - include_tasks: image-creation.yml
 - include_tasks: flavor-creation.yml
 - include_tasks: keypair-creation.yml
