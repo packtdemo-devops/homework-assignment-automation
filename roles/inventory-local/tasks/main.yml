@@ -12,5 +12,5 @@
 
 - name: Create local inventory file
   template:
-    src: inventory_local.j2
+    src: local-inventory.j2
     dest: "{{workdir}}/inventory/inventory-local"
