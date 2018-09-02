@@ -2,7 +2,7 @@
 - hosts: workstation
   become: yes
   roles:
-    - setup-workstation
+    - workstation-setup
 
 
 
