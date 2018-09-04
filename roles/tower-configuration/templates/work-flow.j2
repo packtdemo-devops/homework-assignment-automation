@@ -1,6 +1,6 @@
 - project: "{{proj_name}}"
   success:
-  - job_template: "{{job_template_aws_provision}}"
+  - job_template: "{{aws_provision_template}}"
     success:
     - inventory_source: "{{ec2_inventory_source}}"
       success:
