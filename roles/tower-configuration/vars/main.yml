@@ -10,38 +10,38 @@ ssh_cred_name: "Connect_to_workstation"
 user_cred_name: "cloud-user"
 user_cred_path: "/root/.ssh/openstack.pem"
 static_inventory_name: scm_inventory
-job_template_name_osp_infra: openstack_infra
+osp_infra_template: openstack_infra
 instance_group_name: osp
 osp_infra_playbook: ansible-openstack-infra.yml
 workflow_template_name: cicd_workflow
-job_template_name_osp_instances: create-openstack-instances
+name_osp_instances_template: create-openstack-instances
 osp_instances_playbook: ansible-openstack-instance.yml
 group_name: workstation
 host_name: workstation-{{osp_GUID}}.rhpds.opentlc.com
-job_template_name_3tier_app: "3tier app deployment"
+name_3tier_app_template: "3tier app deployment"
 app_deploy_playbook: ansible-3-tier-app.yml
 vault_name: yum_repo_vault
-job_template_name_osp_instances_delete: "Delete Openstack Instances"
+osp_instances_delete_template: "Delete Openstack Instances"
 osp_instances_delete_playbook: ansible-openstack-delete.yml
-job_template_smoke_osp: "Smoke test for QA Env"
+smoke_osp_template: "Smoke test for QA Env"
 osp_smoke_playbook: ansible-openstack-smoketest.yml
-job_template_aws_provision: "Prod Env Provisioning"
+aws_provision_template: "Prod Env Provisioning"
 aws_provision_playbook: aws_provisioning.yml
 ec2_dynamic_inventory: "Three tier inventory"
 aws_ssh_playbook: aws_credential.yml
 sso_cred_name: "SSO key"
-job_template_aws_ssh_keys: "SSH keys three tier app"
-ec2_inventory_source: "Three tier inventory source"
+aws_ssh_keys_template: "SSH keys three tier app"
+ec2_source_inventory: "Three tier inventory source"
 aws_read_keys: "AWS Access Keys"
 aws_region_name: us-east-1
 tag_filters: "tag:instance_filter=three-tier-app-rishabh.p.sharma@accenture.com"
 scm_inventory_source: "SCM three tier inventory source"
 path_to_scm_inventory: scm_inventory
 aws_status_playbook: aws_check_status.yml
-job_template_aws_status_check: "Check the status of AWS instances"
-job_template_name_3tier_app_aws: "3 tier app on Prod env"
+aws_status_check_template: "Check the status of AWS instances"
+3tier_app_aws_template: "3 tier app on Prod env"
 aws_cred_name: "Creds for AWS instances"
-job_template_smoke_aws: "Smoke test on Prod env"
+smoke_aws_template: "Smoke test on Prod env"
 aws_smoke_app_playbook: ansible-aws-smoketest.yml
 
 
