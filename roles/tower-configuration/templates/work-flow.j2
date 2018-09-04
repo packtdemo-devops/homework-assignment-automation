@@ -2,24 +2,24 @@
   success:
   - job_template: "{{aws_provision_template}}"
     success:
-    - inventory_source: "{{ec2_inventory_source}}"
+    - inventory_source: "{{ec2_source_inventory}}"
       success:
-      - job_template: "{{job_template_aws_status_check}}"
+      - job_template: "{{aws_status_check_template}}"
         success:
-        - job_template: "{{job_template_aws_ssh_keys}}"
-  - job_template: "{{job_template_name_osp_infra}}"
+        - job_template: "{{aws_ssh_keys_template}}"
+  - job_template: "{{osp_infra_template}}"
     success:
-    - job_template: "{{job_template_name_osp_instances}}"
+    - job_template: "{{name_osp_instances_template}}"
       success:
-      - job_template: "{{job_template_name_3tier_app}}"
+      - job_template: "{{name_3tier_app_template}}"
         success:
-        - job_template: "{{job_template_smoke_osp}}"
+        - job_template: "{{smoke_osp_template}}"
           failure:
-          - job_template: "{{job_template_name_osp_instances_delete}}"
+          - job_template: "{{osp_instances_delete_template}}"
           success:
           - inventory_source: "{{ec2_inventory_source}}"
             success:
-            - job_template: "{{job_template_name_3tier_app_aws}}"
+            - job_template: "{{3tier_app_aws_template}}"
               success:
-              - job_template: "{{job_template_smoke_aws}}"
+              - job_template: "{{smoke_aws_template}}"
              
